@@ -55,6 +55,5 @@
 /backend/build/
 /backend/!**/src/main/**/build/
 /backend/!**/src/test/**/build/
-/backend/
 ### VS Code ###
 /backend/.vscode/
