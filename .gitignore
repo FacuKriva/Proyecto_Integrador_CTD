@@ -30,7 +30,6 @@
 /backend/!.mvn/wrapper/maven-wrapper.jar
 /backend/!**/src/main/**/target/
 /backend/!**/src/test/**/target/
-/backend/
 ### STS ###
 /backend/.apt_generated
 /backend/.classpath
@@ -39,13 +38,11 @@
 /backend/.settings
 /backend/.springBeans
 /backend/.sts4-cache
-/backend/
 ### IntelliJ IDEA ###
 /backend/.idea
 /backend/*.iws
 /backend/*.iml
 /backend/*.ipr
-/backend/
 ### NetBeans ###
 /backend/nbproject/private/
 /backend/nbbuild/
