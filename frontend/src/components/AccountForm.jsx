@@ -1,7 +1,7 @@
 import styledComponents from "styled-components";
 import { useEffect, useState } from "react";
 
-const AccountForm = ({textBellow, children}) => {
+const AccountForm = ({textBellow, children, handleSubmit}) => {
     const [showForm, setShowForm] = useState(false);
     
     const toggleClass = (condition, secondCondition, classList) => {
@@ -23,14 +23,15 @@ const AccountForm = ({textBellow, children}) => {
     }
 
     useEffect(() => {
-            setShowForm(true);
+
+            setShowForm(true)
     }, []);
 
 
 
     return (
         <Parent style={{"background":"rgba(196, 196, 196, .2)", }} className={showForm?"":"enter"}>
-            <Form action="#" onChange={handleBlur}>
+            <Form action="#" onChange={handleBlur} onSubmit={(e) => handleSubmit(e)}>
                 {children}
             </Form>
             <Switch>
