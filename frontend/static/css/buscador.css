@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('style.css');
+@import url('responsive.css');
+
+/*BUSCADOR*/
+
+.contenedor-buscador {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorPrincipal);
+    height: 300px;
+}
+
+.buscador-h1 {
+    font-size: 1.6em;
+    color: var(--colorCuarto);
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form * {
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.buscador #city,
+.calendario input[type="text"] {
+    color: #7F7F7F;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 15px;
+}
+
+.boton-buscar {
+    cursor: pointer;
+    padding: 0.8em;
+    background-color: var(--colorSecundario);
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--colorCuarto);
+}
+
+.boton-buscar a {
+    color: white;
+    text-decoration: none;
+}
