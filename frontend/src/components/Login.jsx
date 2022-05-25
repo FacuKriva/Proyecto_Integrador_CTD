@@ -6,7 +6,7 @@ import PasswordInput from "./minicomponents/PasswordInput";
 const Login = ({handleClick, swapComponent}) => {
 
     return (
-        <AccountForm textBellow={<p>¿Ya tienes una cuenta? <A onClick={swapComponent}>Iniciar sesión</A></p>}>
+        <AccountForm handleSubmit={(e) => handleClick(e)} textBellow={<p>¿Ya tienes una cuenta? <A onClick={swapComponent}>Iniciar sesión</A></p>}>
             <Title>Crear cuenta</Title>
             <NombreApellido>
                 <InputLogin id="nombre" type="text" label="Nombre" errorMessage="Debe tener mas de 3 caracteres."></InputLogin>
@@ -17,7 +17,7 @@ const Login = ({handleClick, swapComponent}) => {
             <PasswordInput/>
             <InputLogin id="confirmarContrasena" type="password" label="Confirmar contraseña" errorMessage="Las contraseñas no coinciden."></InputLogin>
 
-            <Button type="submit" className="btn btn-primary" onClick={handleClick}>Crear cuenta</Button>
+            <Button type="submit" className="btn btn-primary">Crear cuenta</Button>
         </AccountForm>
         
     );
