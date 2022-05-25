@@ -1,0 +1,102 @@
+@import url(./style.css);
+
+.bar{
+    position:absolute;
+    min-height: 100vh;
+    width: 303px;
+    top: 0;
+    right: 0;
+    background-color: white;
+    display: none;
+    transition: 200ms ease;
+}
+.bar-header{
+    background-color: var(--colorPrincipal) ;
+    height: 175px;
+}
+
+.bar-footer{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.bar-footer p{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+   
+    font-weight: bold;
+}
+
+.bar-footer p a {
+    margin-left: 5px;
+    text-decoration: none;
+    color: var(--colorPrincipal)
+}
+
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 10px;
+}
+
+.redes li a i{
+    color: var(--colorSecundario);
+}
+
+hr{
+    width: 260px;
+    border: 1px solid var(--colorSecundario);
+    margin:10px 0 10px 0 ;
+    
+}
+
+.visible{
+    display: block;
+}
+
+#exit-bar{
+    margin: 5px;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    text-align: right;
+}
+
+.btn-link{
+    text-decoration: none;
+    color: var(--colorSecundario);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    
+}
+
+.menu-text{
+    position: relative;
+    top: 120px;
+    left: 240px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.contenedor-welcome{
+    position: absolute;
+    top: 0px;
+    right: 100px;
+}
+
+.contenedor-welcome h4{
+    color: black;
+}

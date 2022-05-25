@@ -1,0 +1,207 @@
+            /*RESPONSIVE DE LA PÁGINA PRINCIPAL*/
+            
+            @media (max-width: 2560px) {
+                /*HEADER*/
+                header {
+                    padding: 15px 40px 10px 40px;
+                }
+                .logo {
+                    display: flex;
+                    align-items: flex-end;
+                }
+                .logo h4 {
+                    margin-left: 10px;
+                    margin-bottom: 10px;
+                    color: black;
+                }
+                .btn-menu {
+                    display: none;
+                }
+                /*HEADER- botones*/
+                .botones ul {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: row;
+                }
+                .botones ul li a {
+                    text-decoration: none;
+                    color: var(--colorSecundario);
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 16px;
+                    border: solid 2px var(--colorSecundario);
+                    border-radius: 5px;
+                }
+                /*BLOQUE-BUSCADOR*/
+                .contenedor-buscador {
+                    height: 160px;
+                }
+                .buscador-h1 {
+                    font-size: 1.6em;
+                    color: var(--colorQuinto);
+                    padding-top: 1.25em;
+                }
+                /* .form *{
+        width: 40%;
+    }*/
+                .form {
+                    display: flex;
+                    flex-direction: row;
+                    /*justify-content: space-around*/
+                    ;
+                    padding: 10px 10px 30px 10px;
+                    width: unset;
+                    width: 80%;
+                }
+                .form .calendario input[type="text"],
+                .form .buscador #city {
+                    width: 350px;
+                    height: 40px;
+                    /*margin: 25px 5px;*/
+                    border-radius: 5px;
+                    border: none;
+                    font-size: 14px;
+                }
+                .form .calendario input[type="text"] {
+                    margin: 0px 10px;
+                }
+                .boton-buscar {
+                    padding: 0.7em;
+                }
+                .boton-buscar a {
+                    color: white;
+                    text-decoration: none;
+                }
+                /*FOOTER*/
+                .redes-sociales ul {
+                    display: flex;
+                    flex-direction: row;
+                    list-style-type: none;
+                }
+                .fa-instagram,
+                .fa-linkedin-in,
+                .fa-twitter,
+                .fa-facebook {
+                    font-size: 26px;
+                    color: var(--colorQuinto);
+                    margin-left: 30px;
+                }
+            }
+            
+            @media(max-width: 768px) {
+                /*HEADER*/
+                header {
+                    padding: 20px 40px;
+                }
+                .logo h4 {
+                    display: none;
+                }
+                /*BLOQUE-BUSCADOR*/
+                .form {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    padding: 10px 10px 30px 10px;
+                }
+                .form .calendario input[type="text"],
+                .form .buscador #city {
+                    width: 300px;
+                    height: 40px;
+                    border-radius: 5px;
+                    border: none;
+                    font-size: 14px;
+                }
+                .boton-buscar {
+                    padding: 0.6em;
+                }
+                .boton-buscar a {
+                    color: white;
+                    text-decoration: none;
+                }
+                @media (max-width:/*480px*/
+                540px) {
+                    /*HEADER*/
+                    .logo h4 {
+                        display: none;
+                    }
+                    .btn-menu {
+                        display: unset;
+                    }
+                    .botones a {
+                        display: none;
+                    }
+                    .welcome .name-initials,
+                    .welcome .hello-name,
+                    .welcome .close {
+                        display: none;
+                    }
+                    /*con esto estamos haciendo que tanto las iniciales como 
+    el saludo puedan posicionarse abajo, a la derecha del contenedor?*/
+                    .contenedor-welcome {
+                        position: absolute;
+                        top: 100px;
+                        right: 20px;
+                    }
+                    .welcome-bar .name-initials-bar {
+                        background-color: var(--colorQuinto);
+                        border: solid var(--colorPrincipal);
+                        border-radius: 50%;
+                        padding: 5px;
+                        font-size: 20px;
+                        color: var(--colorSecundario);
+                    }
+                    /*con esto logramos que el texto quede pegado a la derecha*/
+                    .hello-name-bar {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                    }
+                    /*BUSCADOR*/
+                    .contenedor-buscador {
+                        height: 300px;
+                    }
+                    .form {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                    }
+                    .form * {
+                        width: 100%;
+                    }
+                    .form .calendario input[type="text"],
+                    .form .buscador #city {
+                        width: 100%;
+                    }
+                    .form .calendario input[type="text"] {
+                        margin: 0px 0px 10px 0px;
+                    }
+                    .form .buscador #city {
+                        margin-bottom: 10px;
+                    }
+                    /*BLOQUE CATEGORÍA*/
+                    .section-categoria>h2,
+                    .section-listado>h2 {
+                        padding-left: 10px;
+                    }
+                    .contenedor-categoria {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 10px 10px;
+                    }
+                    .card-categoria {
+                        border-radius: 10px;
+                        height: unset;
+                        width: 100%;
+                        border: 1px solid #F3F1ED;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                        margin-bottom: 20px;
+                    }
+                    /*FOOTER*/
+                    .redes-sociales ul {
+                        display: none;
+                    }
+                }
+            }
