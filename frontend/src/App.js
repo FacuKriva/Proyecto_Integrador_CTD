@@ -1,6 +1,5 @@
 import './App.css';
-import TemplateResponsive from './components/TemplateResponsive';
-import HandleForm from './components/HandleForm';
+import TemplateResponsive from './components/Layout/TemplateResponsive';
 
 function App() {
   return (

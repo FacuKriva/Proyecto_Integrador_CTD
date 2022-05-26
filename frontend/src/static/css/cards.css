@@ -1,0 +1,141 @@
+@import url("style.css");
+@import url('responsive.css');
+
+/*BLOQUE- CATEGORÍAS*/
+
+.section-listado {
+    background-color: var(--colorCuarto);
+}
+
+.section-listado>h2 {
+    font-size: 1.5em;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+
+/*.contenedor-categoria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.contenedor-categoria{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card-categoria{
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #F3F1ED;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+
+*/
+
+
+/*BLOQUE LISTADO*/
+
+.contenedor-listado {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    flex-wrap: wrap;
+}
+
+.descripcion-listado {
+    padding: 10px 15px 10px 15px;
+    position: absolute;
+    top: 50%;
+    text-align: left;
+}
+
+.descripcion-listado h3,
+.descripcion-listado h4,
+.descripcion-listado p {
+    font-size: 14px;
+}
+
+.descripcion-listado h2 {
+    padding-bottom: 20px;
+    color: var(--colorPrincipal)
+}
+
+.descripcion-listado h4 {
+    padding-bottom: 30px;
+}
+
+.descripcion-listado h4 strong {
+    padding-bottom: 20px;
+    color: var(--colorSecundario)
+}
+
+
+/*NUEVA CARD*/
+
+.listado-card {
+    /*
+    CREO QUE ESTO NO ESTÁ HACIENDO NADA
+    display: flex;
+    flex-direction: column;*/
+    position: relative;
+    background-color: white;
+    width: 400px;
+    height: 550px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 20px 10px;
+}
+
+.listado-card .listado-card-imagen {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.boton-vermas {
+    cursor: pointer;
+    padding: 0.8em;
+    background-color: var(--colorSecundario);
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--colorQuinto);
+}
+
+.boton-vermas a {
+    color: white;
+    text-decoration: none;
+}
+
+.corazon {
+    transition: color 0.8s linear 0.2s;
+    color: var(--colorQuinto);
+    font-size: x-large;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+
+/* AGREGUE CLASE PARA LA IMAGEN DE LAS CATEGORIAS */
+
+.img-categoria {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
