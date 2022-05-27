@@ -13,8 +13,15 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"pm.collectionVariables.set(\"id_bnb\", pm.response.json().id);\r",
+							"\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Id is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.variables.get(\"id_bnb\"));\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Titulo is correct\", function () {\r",
@@ -25,7 +32,10 @@
 							"pm.test(\"Descripcion is correct\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.descripcion).to.eql(\"Soy la categoría Bed and Breakfast\");\r",
-							"});"
+							"});\r",
+							"\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -63,8 +73,15 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"pm.collectionVariables.set(\"id_allinc\", pm.response.json().id);\r",
+							"\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Id is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.variables.get(\"id_allinc\"));\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Titulo is correct\", function () {\r",
@@ -108,7 +125,7 @@
 			"response": []
 		},
 		{
-			"name": "03 - Listar Categorias",
+			"name": "03 - Listar una Categoria",
 			"event": [
 				{
 					"listen": "test",
@@ -116,6 +133,21 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Id is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.variables.get(\"id_allinc\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Titulo is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.titulo).to.eql(\"All Inclusive\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Descripcion is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.descripcion).to.eql(\"Soy la categoría All Inclusive\");\r",
 							"});\r",
 							""
 						],
@@ -127,13 +159,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/categorias",
+					"raw": "localhost:8080/categorias/{{id_allinc}}",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"categorias"
+						"categorias",
+						"{{id_allinc}}"
 					]
 				}
 			},
@@ -160,7 +193,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"id\": 99,\r\n        \"titulo\": \"Bed and Breakfast\",\r\n        \"descripcion\": \"Soy la categoría Bed and Breakfast\",\r\n        \"urlImagen\": \"https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470\"\r\n}",
+					"raw": "{\r\n        \"id\": 9999,\r\n        \"titulo\": \"Bed and Breakfast\",\r\n        \"descripcion\": \"Soy la categoría Bed and Breakfast\",\r\n        \"urlImagen\": \"https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -194,6 +227,15 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"request": {
@@ -201,7 +243,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"id\": 1,\r\n        \"titulo\": \"Bed and Breakfast\",\r\n        \"descripcion\": \"Soy la categoría Bed and Breakfast\",\r\n        \"urlImagen\": \"https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470\"\r\n}",
+					"raw": "{\r\n        \"id\": \"{{id_bnb}}\",\r\n        \"titulo\": \"Bed and Breakfast\",\r\n        \"descripcion\": \"Soy la categoría Bed and Breakfast\",\r\n        \"urlImagen\": \"https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -222,39 +264,7 @@
 			"response": []
 		},
 		{
-			"name": "06 - Listar Categorias",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/categorias",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"categorias"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "07 - Eliminar Categoria Existente",
+			"name": "06- Eliminar Categoria Existente",
 			"event": [
 				{
 					"listen": "test",
@@ -273,21 +283,21 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/categorias/2",
+					"raw": "localhost:8080/categorias/{{id_allinc}}",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"categorias",
-						"2"
+						"{{id_allinc}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "08 - Eliminar Categoria Inexistente",
+			"name": "07 - Eliminar Categoria Inexistente",
 			"event": [
 				{
 					"listen": "test",
@@ -306,14 +316,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/categorias/99",
+					"raw": "localhost:8080/categorias/9999",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"categorias",
-						"99"
+						"9999"
 					]
 				}
 			},
@@ -348,14 +358,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/categorias/1",
+					"raw": "localhost:8080/categorias/{{id_bnb}}",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"categorias",
-						"1"
+						"{{id_bnb}}"
 					]
 				}
 			},
@@ -392,6 +402,16 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "id_bnb",
+			"value": ""
+		},
+		{
+			"key": "id_allinc",
+			"value": ""
 		}
 	]
 }
