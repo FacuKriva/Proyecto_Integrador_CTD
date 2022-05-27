@@ -29,18 +29,24 @@ const Container = styled.div`
     
   display: flex;
   flex-direction: column;
-  height: 270px;
+  height: 220px;
   align-items: center;
   justify-content: space-around;
   background-color: var(--contrast--dark);
+  background: linear-gradient(
+          rgba(0, 0, 0, 0.5), 
+          rgba(0, 0, 0, 0.2)
+        ), url("https://images.unsplash.com/photo-1520455470442-5d140eacec95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   @media only screen and (min-width: 768px) {
-    height: 140px;
     display: Flex;
     flex-direction: column;
     justify-content: center;
   }
   @media only screen and (min-width: 1366px) {
-    height: 150px;
   }
 `;
 const Title = styled.h1`
@@ -75,10 +81,11 @@ const Form = styled.form`
     width: 100%;
     border-radius: 5px;
     height: 40px;
-    background-color: var(--contrast--light);
+    background-color: var(--contrast--light);}
+
     option {
+    background-color: var(--contrast--light);
         color: var(--contrast--black);
-    }
     }
     @media only screen and (min-width: 768px) {
       flex-direction: row;

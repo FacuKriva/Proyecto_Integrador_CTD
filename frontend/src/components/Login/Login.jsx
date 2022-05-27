@@ -2,11 +2,10 @@ import styledComponents from "styled-components";
 import InputLogin from "./minicomponents/InputLogin";
 import AccountForm from "./AccountForm";
 import PasswordInput from "./minicomponents/PasswordInput";
-import { useState } from "react";
-import {Navigate} from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 
-const Login = ({handleClick, swapComponent}) => {
-    const [navigate, setNavigate] = useState(false);
+const Login = () => {
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,15 +21,18 @@ const Login = ({handleClick, swapComponent}) => {
             contrasena: e.target.elements[1].value,
         }
 
-        handleClick(user);
-        setNavigate(true);
+        const localUser = JSON.parse(localStorage.getItem("user"));
+
+        if(localUser && localUser.correoElectronico === user.correoElectronico && localUser.contrasena === user.contrasena) {
+            navigate("/");
+            localStorage.setItem("login?", true);
+        }
          
     }
 
 
     return (
-        <AccountForm handleSubmit={handleSubmit} textBellow={<p>¿No tienes una cuenta? <A onClick={swapComponent}>Crear Cuenta</A></p>}>
-            {navigate ? <Navigate to="/"></Navigate> : null}
+        <AccountForm handleSubmit={handleSubmit} textBellow={<p>¿No tienes una cuenta?<Link to="/register"> <A>Crear Cuenta</A></Link></p>}>
             <Title>Iniciar Sesion</Title>
                 <InputLogin id="correoElectronico" type="text" label="Correo Electronico" errorMessage="Formato incorrecto."></InputLogin>
             <PasswordInput/>

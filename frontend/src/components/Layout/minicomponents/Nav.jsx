@@ -1,5 +1,7 @@
-import styledComponents from "styled-components";
+import UserName from "../../Login/UserName";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import styledComponents from "styled-components";
 
 const Nav = () => {
     const [isEnter, setIsEnter] = useState(true);
@@ -10,10 +12,11 @@ const Nav = () => {
     }, []);
 
     return <NavScreen className={isEnter&&"isEnter"}>
+                <UserName className={"nav"} />
                 <ul>
-                    <li>Inicio</li>
-                    <li>Crear Cuenta</li>
-                    <li>Iniciar Sesion</li>
+                    <Link to="/"><li>Inicio</li></Link>
+                    <Link to="/register"><li>Crear Cuenta</li></Link>
+                    <Link to="/login"><li>Iniciar Sesion</li></Link>
                 </ul>
 
             </NavScreen>
@@ -27,8 +30,9 @@ const NavScreen = styledComponents.div`
 
     background: #FFF;
     position: absolute;
-    top: 80px; left: 0;
-    width: 100%; height: 85vh;
+    top: 100px; right: 0;
+    width: 80%; height: 87.5vh;
+    padding: 2rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +58,7 @@ const NavScreen = styledComponents.div`
                 display: block;
                 position: absolute;
                 right: 6vw;
-                width: 90vw;
+                width: 65vw;
                 height: 1px;
                 background: #000;
             }

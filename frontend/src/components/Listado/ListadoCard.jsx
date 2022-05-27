@@ -50,16 +50,21 @@ const Parent = styledComponents.div`
     width: calc(50% - 20px);
     box-shadow: 0px 4px 4px 0px #00000040;
     border-radius: 10px;
-    @media only screen and (max-width: 768px) {
-        width: 90%;
+    @media only screen and (max-width: 600px) {
         flex-direction: column;
+    }
+    @media only screen and (max-width: 768px) {
+        width: 100%;
     }
     img {
         width: 50%;
         border-radius: 8px;
-        @media only screen and (max-width: 768px) {
+        object-fit: cover;
+        width: 40%;
+        @media only screen and (max-width: 600px) {
             width: 100%;
         }
+
     }
     .descripcion-listado {
         display: flex;

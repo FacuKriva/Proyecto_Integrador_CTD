@@ -2,11 +2,10 @@ import styledComponents from "styled-components";
 import InputLogin from "./minicomponents/InputLogin";
 import AccountForm from "./AccountForm";
 import PasswordInput from "./minicomponents/PasswordInput";
-import { useState } from "react";
-import { Navigate } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 
-const Register = ({handleClick, swapComponent}) => {
-    const [navigate, setNavigate] = useState(false);
+const Register = () => {
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,13 +23,13 @@ const Register = ({handleClick, swapComponent}) => {
             contrasena: e.target.elements[3].value,
         }
 
-        handleClick(user);
-        setNavigate(true);
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate("/login");
+        
     }
 
     return (
-        <AccountForm handleSubmit={handleSubmit} textBellow={<p>¿Ya tienes una cuenta? <A onClick={swapComponent}>Iniciar sesión</A></p>}>
-            {navigate ? <Navigate to="/login"></Navigate> : null}
+        <AccountForm handleSubmit={handleSubmit} textBellow={<p>¿Ya tienes una cuenta? <Link to="/login"><A>Iniciar sesión</A></Link></p>}>
             <Title>Crear cuenta</Title>
             <NombreApellido>
                 <InputLogin id="nombre" type="text" label="Nombre" errorMessage="Debe tener mas de 3 caracteres."></InputLogin>

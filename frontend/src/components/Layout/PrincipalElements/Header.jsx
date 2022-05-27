@@ -1,19 +1,23 @@
-import Logo from "./minicomponents/Logo";
-import styledComponents from "styled-components";
+import Logo from "../minicomponents/Logo";
+import UserName from "../../Login/UserName";
+import Nav from "../minicomponents/Nav";
 import { useState } from "react";
-import Nav from "./Nav";
 import {GiHamburgerMenu} from "react-icons/gi";
-import { Link } from "react-router-dom";
-import {Routes, Route} from "react-router-dom";
-const Header = ({isLogin, user, setUser, setIsLogin}) => {
+import {IoIosArrowBack} from "react-icons/io";
+import {Routes, Route, Link} from "react-router-dom";
+import styledComponents from "styled-components";
+const Header = () => {
     const [showNav, setShowNav] = useState(false);
 
     return <HeaderDiv>
 
-        <LogoSlogan><Link to="/"><Logo/></Link><Link to="/"><span>Sentite como en tu hogar</span></Link></LogoSlogan>
-        
+        <LogoSlogan><Link to="/"><Logo/></Link><Link to="/"><span>
+            {["¿Con barba? Barbudos", "Viajes, con barba y birras", "¿Hotel? Con barba", "Sentite como en casa", "Viajes a precios incomparables", "¿No nos crees?, preguntá a Maga"][Math.floor(Math.random() * 6)]}
+        </span></Link></LogoSlogan>
         <LogoSlogan>
-        {isLogin ? <>Hola, {user.correoElectronico} <Button onClick={() => {setUser(null);setIsLogin(false)}}>Cerrar Sesión</Button><Icono><p>{user.nombre.split(" ").reduce((acc, e)=>acc+e[0], "")+user.apellido.split(" ").reduce((acc, e)=>acc+e[0], "")}</p></Icono></>  : 
+        
+        {localStorage.getItem("login?")?<UserName className={"header"} />:
+
         <Routes>
             <Route path="/" element={<><Link to="/register"><Button>Crear Cuenta</Button></Link><Link to="/login"><Button>Iniciar Sesion</Button></Link></>} />
             <Route path="/register" element={<><Link to="/"><Button>Inicio</Button></Link><Link to="/login"><Button>Iniciar Sesion</Button></Link></>} />
@@ -22,41 +26,29 @@ const Header = ({isLogin, user, setUser, setIsLogin}) => {
         }
         
         </LogoSlogan>
-        <div>
-            <NavIcon onClick={() => {setShowNav(!showNav)}}><GiHamburgerMenu/></NavIcon>
+        <div className="burger">
+            <NavIcon onClick={() => {setShowNav(!showNav)}}>{showNav?<IoIosArrowBack/>:<GiHamburgerMenu/>}</NavIcon>
             {showNav && <Nav />}
         </div>
     </HeaderDiv>
 }
 
 
-const Icono = styledComponents.p`
-    background: var(--color-primary);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Roboto';
-        font-style: italic;
-        font-weight: 300;
-        font-size: 20px;
-        line-height: 23px;
-    `
+
 
 const HeaderDiv = styledComponents.div`
     z-index: 10;
     background: #FFF;
     padding: 0 1rem;
     top: 0;
-    width: 100%; height: 80px;
+    width: 100%; height:100px;
     display: flex;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     transition: all 300ms ease-in-out;
-    div {
+    .burger {
         &:last-child {
             display:none;
         }
@@ -81,6 +73,9 @@ const LogoSlogan = styledComponents.div`
         font-weight: 300;
         font-size: 20px;
         line-height: 23px;
+    }
+    img {
+        height: 75px;
     }
     @media only screen and (max-width: 600px) {
         span {

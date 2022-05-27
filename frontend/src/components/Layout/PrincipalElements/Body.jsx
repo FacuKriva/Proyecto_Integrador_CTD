@@ -1,8 +1,8 @@
-import Buscador from "../Buscador/Buscador";
-import ListadoCard from "./ListadoCard";
-import CategoryCard from "../Categorias/CategoryCard";
-import Lista from "./listas.json"
-import CategoriasJson from "./categorias.json"
+import Buscador from "../../Buscador/Buscador";
+import ListadoCard from "../../Listado/ListadoCard";
+import CategoryCard from "../../Categorias/CategoryCard";
+import Lista from "../../Listado/listas.json"
+import CategoriasJson from "../../Listado/categorias.json"
 import styledComponents from "styled-components";
 
 const Body = ({}) => { 
@@ -62,9 +62,9 @@ const Listas = styledComponents.div`
     margin: 0 auto;
     padding: 0 43px 60px;
     gap: 20px;
-    @media only screen and (min-width: 768px) {
-    }
-    @media only screen and (min-width: 1366px) {
+    @media only screen and (max-width: 768px) {
+        gap: 14px;
+        padding: 0 14px 60px;
     }
 `;
 

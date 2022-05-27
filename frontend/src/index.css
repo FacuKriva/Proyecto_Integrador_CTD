@@ -23,6 +23,9 @@ body {
   font-family: Roboto;
   box-sizing: border-box;
 }
+button {
+  cursor: pointer;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

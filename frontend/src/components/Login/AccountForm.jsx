@@ -71,6 +71,7 @@ const Switch = styledComponents.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 20px;
     a {
         text-decoration: none;
     }
@@ -78,22 +79,21 @@ const Switch = styledComponents.div`
 
 const Parent = styledComponents.div`
     width: auto;
-    min-height: 82vh;
+    min-height: calc(100vh - 160px);
     position: relative;
     transform: translateY(-0%);
     transition: all 300ms ease-in-out;
     height: 100%;
     @media only screen and (max-width: 600px) {
-        padding: 100px 13% 0;
+        padding: 60px 13% 0;
     }
     @media only screen and (min-width: 600px) {
-        padding: 100px 27% 0;
+        padding: 60px 27% 0;
     }
     @media only screen and (min-width: 768px) {
-        padding: 100px 33% 0;
+        padding: 60px 33% 0;
     }
-    padding-top: auto;
-    padding-bottom: auto;
+    padding-top: 20px;
 
     `
 
