@@ -55,7 +55,6 @@ const Parent = styledComponents.div`
     }
     @media only screen and (max-width: 768px) {
         width: 100%;
-        
     }
     img {
         width: 50%;

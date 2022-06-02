@@ -6,6 +6,7 @@ import styledComponents from "styled-components";
 const Nav = () => {
     const [isEnter, setIsEnter] = useState(true);
 
+
     useEffect(() => {
         setIsEnter(false);
     }, []);
